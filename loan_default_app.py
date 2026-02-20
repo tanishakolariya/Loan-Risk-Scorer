@@ -1,22 +1,10 @@
 import streamlit as st
 import pandas as pd
 import joblib
-
-# ----------------------
-# Load Pipeline
-# ----------------------
 xgb_pipeline = joblib.load("loan_pipeline_final.pkl")  # Make sure filename matches
-
-# ----------------------
-# App Config
-# ----------------------
 st.set_page_config(page_title="Loan Default Predictor", layout="centered")
 st.title("Loan Default Risk Predictor")
 st.markdown("Enter borrower details below to calculate default risk:")
-
-# ----------------------
-# User Inputs
-# ----------------------
 Age = st.number_input("Age", min_value=18, max_value=100, value=30)
 Income = st.number_input("Monthly Income", min_value=0.0, value=50000.0)
 LoanAmount = st.number_input("Loan Amount", min_value=0.0, value=200000.0)
@@ -25,10 +13,6 @@ MonthsEmployed = st.number_input("Months Employed", min_value=0, value=36)
 InterestRate = st.number_input("Interest Rate (%)", min_value=0.0, value=10.0)
 LoanTerm = st.number_input("Loan Term (months)", min_value=1, value=60)
 HasCoSigner = st.selectbox("Has Co-Signer?", ["Yes", "No"])
-
-# ----------------------
-# Predict Button
-# ----------------------
 if st.button("Predict Default Risk"):
 
     # Create DataFrame EXACTLY like training data
@@ -61,10 +45,6 @@ if st.button("Predict Default Risk"):
     st.subheader("Default Probability")
     st.progress(int(prob * 100))
     st.write(f"Probability of Default: **{prob:.2%}**")
-
-    # ----------------------
-    # Rule-Based Explanation
-    # ----------------------
     reasons = []
 
     if CreditScore < 600:
