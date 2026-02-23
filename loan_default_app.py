@@ -1,11 +1,13 @@
 import streamlit as st
 import pandas as pd
-import joblib
 import os
-
+import joblib
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "loan_pipeline_final.pkl")
+model = joblib.load(MODEL_PATH)
 print("CURRENT WORKING DIRECTORY:", os.getcwd())
 print("FILES IN CURRENT DIR:", os.listdir())
-xgb_pipeline = joblib.load("loan_pipeline_final.pkl")  # Make sure filename matches
+xgb_pipeline = joblib.load(MODEL_PATH)  # Make sure filename matches
 st.set_page_config(page_title="Loan Default Predictor", layout="centered")
 st.title("Loan Default Risk Predictor")
 st.markdown("Enter borrower details below to calculate default risk:")
@@ -68,3 +70,4 @@ if st.button("Predict Default Risk"):
             st.markdown(f" {r}")
     else:
         st.write("Borrower appears financially stable.")
+
