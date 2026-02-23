@@ -1,6 +1,10 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import os
+
+print("CURRENT WORKING DIRECTORY:", os.getcwd())
+print("FILES IN CURRENT DIR:", os.listdir())
 xgb_pipeline = joblib.load("loan_pipeline_final.pkl")  # Make sure filename matches
 st.set_page_config(page_title="Loan Default Predictor", layout="centered")
 st.title("Loan Default Risk Predictor")
