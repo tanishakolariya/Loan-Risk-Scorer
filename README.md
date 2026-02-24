@@ -29,13 +29,14 @@ Render: Cloud deployment
 
 loan-risk-scorer/
 │
-├── loan_default_app.py        # Streamlit web app
-├── loan_pipeline_final.pkl    # Saved preprocessing + model pipeline
-├── requirements.txt           # Python dependencies
-├── runtime.txt                # Python version for Render
+
+├── loan_default_app.py/n
+├── loan_pipeline_final.pkl   
+├── requirements.txt           
+├── runtime.txt                
 ├── README.md
 └── data/
-    └── Loan_default.csv  # Dataset for training
+    └── Loan_default.csv 
     
 ⚙ How It Works
 Data Preprocessing
