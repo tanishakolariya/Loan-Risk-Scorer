@@ -26,6 +26,7 @@ Streamlit: Web interface
 Render: Cloud deployment
 
 📂 Project Structure
+
 loan-risk-scorer/
 │
 ├── loan_default_app.py        # Streamlit web app
