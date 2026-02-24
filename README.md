@@ -30,11 +30,16 @@ Render: Cloud deployment
 loan-risk-scorer/
 │
 
-├── loan_default_app.py/n
-├── loan_pipeline_final.pkl   
-├── requirements.txt           
-├── runtime.txt                
+├── loan_default_app.py
+
+├── loan_pipeline_final.pkl  
+
+├── requirements.txt  
+
+├── runtime.txt   
+
 ├── README.md
+
 └── data/
     └── Loan_default.csv 
     
@@ -65,21 +70,24 @@ Loan Term
 The XGBoost model was evaluated on the test dataset (51,070 samples).
 Overall Accuracy: 0.696
 ROC-AUC Score: 0.732
+
 Confusion Matrix:
 Predicted \ Actual	No Default (0)	Default (1)
 No Default (0)	31,747	2,117
 Default (1)	13,423	3,783
+
 Classification Report:
-Class	Precision	Recall	F1-score	Support
-0 (No Default)	0.94	0.70	0.80	45,170
-1 (Default)	0.22	0.64	0.33	5,900
+Class	     Precision	Recall	F1-score	Support
+0 (No Default)	  0.94	0.70	0.80	    45,170
+1 (Default)	      0.22	0.64	0.33	    5,900
 Weighted Averages:
+
 Metric	Value
 Accuracy	0.70
 Precision	0.85
-Recall	0.70
+Recall	    0.70
 F1-score	0.75
-ROC-AUC	0.73
+ROC-AUC	    0.73
 
 🏃 Run Locally
 
